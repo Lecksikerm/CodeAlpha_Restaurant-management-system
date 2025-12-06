@@ -10,8 +10,14 @@ const AppDataSource = new DataSource({
     database: process.env.DB_NAME,
     synchronize: false,
     logging: true,
-    entities: [__dirname + "/entities/*.js"],
+    entities: [
+        __dirname + "/entities/*.js",
+        __dirname + "/models/*.js"
+    ],
     migrations: [__dirname + "/migrations/*.js"],
 });
 
-module.exports = { AppDataSource };
+module.exports = AppDataSource;
+
+
+

@@ -1,10 +1,12 @@
-const { AppDataSource } = require("../data-source");
+const AppDataSource = require("../data-source");
+const Order = require("../entities/Order");
+const OrderItem = require("../entities/OrderItem");
+const MenuItem = require("../entities/MenuItem");
 
-const orderRepo = () => AppDataSource.getRepository("Order");
-const orderItemRepo = () => AppDataSource.getRepository("OrderItem");
-const menuRepo = () => AppDataSource.getRepository("MenuItem");
+const orderRepo = () => AppDataSource.getRepository(Order);
+const orderItemRepo = () => AppDataSource.getRepository(OrderItem);
+const menuRepo = () => AppDataSource.getRepository(MenuItem);
 
-// CREATE ORDER
 exports.createOrder = async (req, res) => {
     try {
         const { table_number, items } = req.body;
@@ -46,8 +48,6 @@ exports.createOrder = async (req, res) => {
     }
 };
 
-
-// GET ALL ORDERS
 exports.getOrders = async (req, res) => {
     try {
         const orders = await orderRepo().find({
@@ -61,7 +61,6 @@ exports.getOrders = async (req, res) => {
     }
 };
 
-// GET ORDER BY ID
 exports.getOrderById = async (req, res) => {
     try {
         const { id } = req.params;

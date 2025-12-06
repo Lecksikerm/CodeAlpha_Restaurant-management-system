@@ -3,6 +3,9 @@ const swaggerUi = require("swagger-ui-express");
 const swaggerJsdoc = require("swagger-jsdoc");
 const menuRoutes = require("./routes/menu");
 const orderRoutes = require("./routes/orderRoutes");
+const tableRoutes = require("./routes/tableRoutes");
+const reservationRoutes = require("./routes/reservationRoutes");
+
 
 require("dotenv").config();
 
@@ -21,6 +24,8 @@ const swaggerSpec = swaggerJsdoc({
 app.use("/api/docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 app.use("/api/menu", menuRoutes);
 app.use("/api/orders", orderRoutes);
+app.use("/api/tables", tableRoutes);
+app.use("/api/reservations", reservationRoutes);
 
 app.get("/", (req, res) => res.json({ status: "ok" }));
 

@@ -1,6 +1,8 @@
-const { AppDataSource } = require("../data-source");
+const AppDataSource = require("../data-source");
+const MenuItem = require("../entities/MenuItem"); 
 
-const menuRepo = () => AppDataSource.getRepository("MenuItem");
+const menuRepo = () => AppDataSource.getRepository(MenuItem); 
+
 
 const formatNaira = (amount) => `N${Number(amount).toFixed(2)}`;
 

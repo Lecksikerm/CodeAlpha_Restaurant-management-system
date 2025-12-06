@@ -1,5 +1,5 @@
 const app = require("./app");
-const { AppDataSource } = require("./data-source");
+const AppDataSource = require("./data-source");
 
 const PORT = process.env.PORT || 5000;
 
@@ -12,3 +12,4 @@ AppDataSource.initialize()
         });
     })
     .catch((err) => console.error("DB error:", err));
+
