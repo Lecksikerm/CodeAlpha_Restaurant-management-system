@@ -5,6 +5,7 @@ const menuRoutes = require("./routes/menu");
 const orderRoutes = require("./routes/orderRoutes");
 const tableRoutes = require("./routes/tableRoutes");
 const reservationRoutes = require("./routes/reservationRoutes");
+const inventoryRoutes = require("./routes/inventoryRoutes");
 
 
 require("dotenv").config();
@@ -26,6 +27,7 @@ app.use("/api/menu", menuRoutes);
 app.use("/api/orders", orderRoutes);
 app.use("/api/tables", tableRoutes);
 app.use("/api/reservations", reservationRoutes);
+app.use("/api/inventory", inventoryRoutes);
 
 app.get("/", (req, res) => res.json({ status: "ok" }));
 

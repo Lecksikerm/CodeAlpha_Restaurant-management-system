@@ -33,6 +33,9 @@ const orderController = require("../controllers/orderController");
  *                       type: integer
  *                     quantity:
  *                       type: integer
+ *             required:
+ *               - table_number
+ *               - items
  *     responses:
  *       201:
  *         description: Order created successfully
@@ -57,7 +60,7 @@ router.get("/", orderController.getOrders);
  * @swagger
  * /api/orders/{id}:
  *   get:
- *     summary: Get a single order
+ *     summary: Get a single order by ID
  *     tags: [Orders]
  *     parameters:
  *       - in: path
@@ -104,6 +107,8 @@ router.get("/:id", orderController.getOrderById);
 router.patch("/:id/status", orderController.updateOrderStatus);
 
 module.exports = router;
+
+
 
 
 
