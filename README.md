@@ -64,7 +64,7 @@ Create a `.env` file:
 
 ```
 PORT=5000
-DATABASE_URL=postgres://postgres:postgres@localhost:5434/restaurant_management_system
+DATABASE_URL=postgres://postgres:password@localhost:5434/restaurant_management_system
 
 ```
 
