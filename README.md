@@ -142,14 +142,6 @@ Migrations are handled using **TypeORM**, ensuring database schema matches entit
 
 ---
 
-## Sales Reports
-
-* Reports include **total revenue**, **total items sold**, and a list of individual orders.
-* Reports can be generated **daily, weekly, or monthly**.
-* API endpoints provide JSON data suitable for dashboards or export.
-
----
-
 ## Testing
 
 * Use **Postman** or **Swagger UI** to test endpoints.
